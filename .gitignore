@@ -4,6 +4,7 @@ node_modules/
 # Build
 /dist/
 /docs/
+!docs/.nojekyll
 
 # System
 .DS_Store
