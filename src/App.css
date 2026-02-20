@@ -1,0 +1,111 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections stack properly */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Card hover effects */
+.kiddo-card,
+.kiddo-card-mustard,
+.kiddo-card-pink,
+.kiddo-card-lavender {
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+/* Button press effect */
+.kiddo-btn:active,
+.kiddo-btn-outline:active {
+  transform: translateY(4px) !important;
+}
+
+/* Input focus states */
+.kiddo-input:focus {
+  outline: none;
+  ring: 2px solid var(--neon-yellow);
+}
+
+/* Image loading placeholder */
+img {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animation for floating elements */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(-50%) translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-6px);
+  }
+}
+
+/* Custom selection color */
+::selection {
+  background: var(--neon-yellow);
+  color: var(--near-black);
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2.5px solid var(--neon-yellow);
+  outline-offset: 2px;
+}
+
+/* Prevent text selection on interactive elements */
+button,
+[role="button"] {
+  user-select: none;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .kiddo-card,
+  .kiddo-card-mustard,
+  .kiddo-card-pink,
+  .kiddo-card-lavender {
+    border-radius: 22px;
+    border-width: 2px;
+  }
+  
+  .kiddo-btn,
+  .kiddo-btn-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .star-badge {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
